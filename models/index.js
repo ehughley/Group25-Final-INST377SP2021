@@ -1,13 +1,13 @@
-import Countries from './countries.js';
-import CountrySides from './country_sides.js';
-import Locations from './locations.js';
-import Outcomes from './outcomes.js';
-import Participants from './participants.js';
-import Sides from './sides.js';
-import WarOutcomes from './war_outcomes.js';
-import Wars from './wars.js';
-import WarSides from './war_sides.js';
-import WhereFought from './where_fought.js';
+import Countries from './Countries.js';
+import CountrySides from './CountrySides.js';
+import Locations from './Locations.js';
+import Outcomes from './Outcomes.js';
+import Participants from './Participants.js';
+import Sides from './Sides.js';
+import WarOutcomes from './WarOutcomes.js';
+import Wars from './Wars.js';
+import WarSides from './WarSides.js';
+import WhereFought from './WhereFought.js';
 
 export default {
   Countries,

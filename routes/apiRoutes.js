@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 /// /////////////////////////////////
 router.get('/countries', async (req, res) => {
   try {
-    const side = await db.countries.findAll();
+    const side = await db.Countries.findAll();
     const reply = side.length > 0 ? { data: side } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -26,7 +26,7 @@ router.get('/countries', async (req, res) => {
 
 router.get('/countries/:side_id', async (req, res) => {
   try {
-    const side = await db.countries.findAll({
+    const side = await db.Countries.findAll({
       where: {
         side_id: req.params.side_id
       }
@@ -40,10 +40,10 @@ router.get('/countries/:side_id', async (req, res) => {
 });
 
 router.post('/countries', async (req, res) => {
-  const side = await db.countries.findAll();
+  const side = await db.Countries.findAll();
   const currentId = (await side.length) + 1;
   try {
-    const newCountries = await db.countries.create({
+    const newCountries = await db.Countries.create({
       side_id: currentId,
       country_name: req.body.country_name
     });
@@ -56,7 +56,7 @@ router.post('/countries', async (req, res) => {
 
 router.delete('/countries/:side_id', async (req, res) => {
   try {
-    await db.countries.destroy({
+    await db.Countries.destroy({
       where: {
         side_id: req.params.side_id
       }
@@ -70,7 +70,7 @@ router.delete('/countries/:side_id', async (req, res) => {
 
 router.put('/countries', async (req, res) => {
   try {
-    await db.countries.update(
+    await db.Countries.update(
       {
         country_name: req.body.hall_name
       },
@@ -92,7 +92,7 @@ router.put('/countries', async (req, res) => {
 /// /////////////////////////////////
 router.get('/CountrySide', async (req, res) => {
   try {
-    const side = await db.countries.findAll();
+    const side = await db.CountrySides.findAll();
     const reply = side.length > 0 ? { data: side } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -169,7 +169,7 @@ router.put('/CountrySide', async (req, res) => {
 /// /////////////////////////////////
 router.get('/locations', async (req, res) => {
   try {
-    const location = await db.locations.findAll();
+    const location = await db.Locations.findAll();
     const reply = location.length > 0 ? { data: location } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -180,7 +180,7 @@ router.get('/locations', async (req, res) => {
 
 router.get('/locations/:location_id', async (req, res) => {
   try {
-    const location = await db.locations.findAll({
+    const location = await db.Locations.findAll({
       where: {
         location_id: req.params.location_id
       }
@@ -194,10 +194,10 @@ router.get('/locations/:location_id', async (req, res) => {
 });
 
 router.post('/locations', async (req, res) => {
-  const location = await db.locations.findAll();
+  const location = await db.Locations.findAll();
   const currentId = (await location.length) + 1;
   try {
-    const newLocations = await db.locations.create({
+    const newLocations = await db.Locations.create({
       location_id: currentId,
       location_name: req.body.country_name
     });
@@ -210,7 +210,7 @@ router.post('/locations', async (req, res) => {
 
 router.delete('/locations/:location_id', async (req, res) => {
   try {
-    await db.locations.destroy({
+    await db.Locations.destroy({
       where: {
         location_id: req.params.location_id
       }
@@ -224,7 +224,7 @@ router.delete('/locations/:location_id', async (req, res) => {
 
 router.put('/locations', async (req, res) => {
   try {
-    await db.locations.update(
+    await db.Locations.update(
       {
         location_name: req.body.location_name
       },
@@ -246,7 +246,7 @@ router.put('/locations', async (req, res) => {
 /// /////////////////////////////////
 router.get('/outcomes', async (req, res) => {
   try {
-    const halls = await db.outcomes.findAll();
+    const halls = await db.Outcomes.findAll();
     const reply = halls.length > 0 ? { data: halls } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -257,7 +257,7 @@ router.get('/outcomes', async (req, res) => {
 
 router.get('/outcomes/:outcome_id', async (req, res) => {
   try {
-    const side = await db.outcomes.findAll({
+    const side = await db.Outcomes.findAll({
       where: {
         outcome_id: req.params.outcome_id
       }
@@ -271,10 +271,10 @@ router.get('/outcomes/:outcome_id', async (req, res) => {
 });
 
 router.post('/outcomes', async (req, res) => {
-  const side = await db.outcomes.findAll();
+  const side = await db.Outcomes.findAll();
   const currentId = (await side.length) + 1;
   try {
-    const newOutcomes = await db.outcomes.create({
+    const newOutcomes = await db.Outcomes.create({
       outcome_id: currentId,
       outcome_name: req.body.outcome_name
     });
@@ -287,7 +287,7 @@ router.post('/outcomes', async (req, res) => {
 
 router.delete('/outcomes/:outcome_id', async (req, res) => {
   try {
-    await db.outcomes.destroy({
+    await db.Outcomes.destroy({
       where: {
         outcome_id: req.params.outcome_id
       }
@@ -301,7 +301,7 @@ router.delete('/outcomes/:outcome_id', async (req, res) => {
 
 router.put('/outcomes', async (req, res) => {
   try {
-    await db.outcomes.update(
+    await db.Outcomes.update(
       {
         outcome_name: req.body.outcome_name
       },
@@ -323,7 +323,7 @@ router.put('/outcomes', async (req, res) => {
 /// /////////////////////////////////
 router.get('/participants', async (req, res) => {
   try {
-    const halls = await db.participants.findAll();
+    const halls = await db.Participants.findAll();
     const reply = halls.length > 0 ? { data: halls } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -334,7 +334,7 @@ router.get('/participants', async (req, res) => {
 
 router.get('/participants/:war_id', async (req, res) => {
   try {
-    const side = await db.participants.findAll({
+    const side = await db.Participants.findAll({
       where: {
         war_id: req.params.war_id
       }
@@ -348,10 +348,10 @@ router.get('/participants/:war_id', async (req, res) => {
 });
 
 router.post('/participants', async (req, res) => {
-  const side = await db.participants.findAll();
+  const side = await db.Participants.findAll();
   const currentId = (await side.length) + 1;
   try {
-    const newParticipants = await db.participants.create({
+    const newParticipants = await db.Participants.create({
       war_id: currentId,
       country_id: req.body.country_id,
       initiator: req.body.initiator
@@ -365,7 +365,7 @@ router.post('/participants', async (req, res) => {
 
 router.delete('/participants/:war_id', async (req, res) => {
   try {
-    await db.participants.destroy({
+    await db.Participants.destroy({
       where: {
         war_id: req.params.war_id
       }
@@ -379,7 +379,7 @@ router.delete('/participants/:war_id', async (req, res) => {
 
 router.put('/participants', async (req, res) => {
   try {
-    await db.participants.update(
+    await db.Participants.update(
       {
         country_id: req.body.country_id,
         initiator: req.body.initiator
@@ -402,7 +402,7 @@ router.put('/participants', async (req, res) => {
 /// /////////////////////////////////
 router.get('/sides', async (req, res) => {
   try {
-    const halls = await db.sides.findAll();
+    const halls = await db.Sides.findAll();
     const reply = halls.length > 0 ? { data: halls } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -413,7 +413,7 @@ router.get('/sides', async (req, res) => {
 
 router.get('/sides/:side_id', async (req, res) => {
   try {
-    const side = await db.sides.findAll({
+    const side = await db.Sides.findAll({
       where: {
         side_id: req.params.side_id
       }
@@ -427,10 +427,10 @@ router.get('/sides/:side_id', async (req, res) => {
 });
 
 router.post('/sides', async (req, res) => {
-  const side = await db.sides.findAll();
+  const side = await db.Sides.findAll();
   const currentId = (await side.length) + 1;
   try {
-    const newSides = await db.sides.create({
+    const newSides = await db.Sides.create({
       side_id: currentId,
       side_name: req.body.side_name
     });
@@ -443,7 +443,7 @@ router.post('/sides', async (req, res) => {
 
 router.delete('/sides/:side_id', async (req, res) => {
   try {
-    await db.sides.destroy({
+    await db.Sides.destroy({
       where: {
         side_id: req.params.side_id
       }
@@ -457,7 +457,7 @@ router.delete('/sides/:side_id', async (req, res) => {
 
 router.put('/sides', async (req, res) => {
   try {
-    await db.sides.update(
+    await db.Sides.update(
       {
         side_name: req.body.side_name
       },
@@ -633,7 +633,7 @@ router.put('/WarSides', async (req, res) => {
 /// /////////////////////////////////
 router.get('/wars', async (req, res) => {
   try {
-    const halls = await db.wars.findAll();
+    const halls = await db.Wars.findAll();
     const reply = halls.length > 0 ? { data: halls } : { message: 'no results found' };
     res.json(reply);
   } catch (err) {
@@ -644,7 +644,7 @@ router.get('/wars', async (req, res) => {
 
 router.get('/wars/:war_id', async (req, res) => {
   try {
-    const side = await db.wars.findAll({
+    const side = await db.Wars.findAll({
       where: {
         war_id: req.params.war_id
       }
@@ -658,10 +658,10 @@ router.get('/wars/:war_id', async (req, res) => {
 });
 
 router.post('/wars', async (req, res) => {
-  const side = await db.wars.findAll();
+  const side = await db.Wars.findAll();
   const currentId = (await side.length) + 1;
   try {
-    const newWars = await db.wars.create({
+    const newWars = await db.Wars.create({
       war_id: currentId,
       war_name: req.body.war_name,
       start_date: req.body.start_date,
@@ -677,7 +677,7 @@ router.post('/wars', async (req, res) => {
 
 router.delete('/wars/:war_id', async (req, res) => {
   try {
-    await db.wars.destroy({
+    await db.Wars.destroy({
       where: {
         war_id: req.params.war_id
       }
@@ -691,7 +691,7 @@ router.delete('/wars/:war_id', async (req, res) => {
 
 router.put('/wars', async (req, res) => {
   try {
-    await db.wars.update(
+    await db.Wars.update(
       {
         war_name: req.body.war_name,
         start_date: req.body.start_date,
