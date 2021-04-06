@@ -24,11 +24,11 @@ router.get('/countries', async (req, res) => {
   }
 });
 
-router.get('/countries/:side_id', async (req, res) => {
+router.get('/countries/:country_id', async (req, res) => {
   try {
     const side = await db.Countries.findAll({
       where: {
-        side_id: req.params.side_id
+        country_id: req.params.country_id
       }
     });
 
