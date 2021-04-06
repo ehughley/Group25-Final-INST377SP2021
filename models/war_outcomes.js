@@ -7,7 +7,7 @@ export default (sequelize, DataTypes) => {
           allowNull: false,
           primaryKey: false
         },
-        outcome_name: {
+        outcome_id: {
           type: DataTypes.INTEGER,
           allowNull: false
         }
