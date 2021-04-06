@@ -124,7 +124,7 @@ router.post('/CountrySide', async (req, res) => {
       side_id: currentId,
       country_id: req.body.country_id
     });
-    res.json(newCountries);
+    res.json(newCountrySide);
   } catch (err) {
     console.error(err);
     res.error('Server error');
