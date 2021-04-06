@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const CountrySides = sequelize.define(
-      'CountrySides',
+      'country_sides',
       {
         side_id: {
           type: DataTypes.INTEGER,
