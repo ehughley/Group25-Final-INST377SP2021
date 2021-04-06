@@ -1,7 +1,3 @@
-import DietaryRestrictions from './DietaryRestrictions.js';
-import DiningHall from './DiningHall.js';
-import Macros from './Macros.js';
-import Meals from './Meals.js';
 import countries from './countries.js';
 import country_sides from './country_sides.js';
 import locations from './locations.js';
