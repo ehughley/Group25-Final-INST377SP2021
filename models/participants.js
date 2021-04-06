@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const participants = sequelize.define(
-      'participants',
+      'Participants',
       {
         war_id: {
           type: DataTypes.INTEGER,

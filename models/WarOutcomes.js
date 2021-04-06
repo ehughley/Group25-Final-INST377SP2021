@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const WarOutcomes = sequelize.define(
-      'war_outcomes',
+      'WarOutcomes',
       {
         side_id: {
           type: DataTypes.INTEGER,

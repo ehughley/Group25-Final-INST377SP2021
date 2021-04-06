@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const WhereFought = sequelize.define(
-      'where_fought',
+      'WhereFought',
       {
         war_id: {
           type: DataTypes.INTEGER,
