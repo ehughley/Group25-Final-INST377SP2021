@@ -8,6 +8,9 @@
     font-family: Helvetica, sans-serif;
   }
   
+  h1,h2{
+    text-align:center;
+  }
   /* The actual timeline (the vertical ruler) */
   .timeline {
     position: relative;
