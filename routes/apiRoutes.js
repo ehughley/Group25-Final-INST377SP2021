@@ -791,6 +791,31 @@ router.put('/WhereFought', async (req, res) => {
 /// //////////////////////////////////
 /// ///////Custom SQL Endpoint////////
 /// /////////////////////////////////
+
+const warsCustom = `SELECT country_name,
+ war_name, start_date, 
+ end_date, 
+ DATEDIFF(end_date,start_date) AS duration
+FROM countries 
+JOIN participants
+	USING(country_id)
+JOIN wars
+	USING(war_id);`;
+router.get('/war/custom', async (req, res) => {
+  try {
+    const result = await db.sequelizeDB.query(warsCustom, {
+      type: sequelize.QueryTypes.SELECT
+    });
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+
+
+
 const macrosCustom = 'SELECT `Dining_Hall_Tracker`.`Meals`.`meal_id` AS `meal_id`,`Dining_Hall_Tracker`.`Meals`.`meal_name` AS `meal_name`,`Dining_Hall_Tracker`.`Macros`.`calories` AS `calories`,`Dining_Hall_Tracker`.`Macros`.`carbs` AS `carbs`,`Dining_Hall_Tracker`.`Macros`.`sodium` AS `sodium`,`Dining_Hall_Tracker`.`Macros`.`protein` AS `protein`,`Dining_Hall_Tracker`.`Macros`.`fat` AS `fat`,`Dining_Hall_Tracker`.`Macros`.`cholesterol` AS `cholesterol`FROM(`Dining_Hall_Tracker`.`Meals`JOIN `Dining_Hall_Tracker`.`Macros`)WHERE(`Dining_Hall_Tracker`.`Meals`.`meal_id` = `Dining_Hall_Tracker`.`Macros`.`meal_id`)';
 router.get('/table/data', async (req, res) => {
   try {
