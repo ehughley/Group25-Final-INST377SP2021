@@ -800,7 +800,8 @@ FROM countries
 JOIN participants
 	USING(country_id)
 JOIN wars
-	USING(war_id);`;
+	USING(war_id)
+ORDER BY start_date;`;
 router.get('/war/custom', async (req, res) => {
   try {
     const result = await db.sequelizeDB.query(warsCustom, {

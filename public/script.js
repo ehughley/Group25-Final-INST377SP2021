@@ -23,22 +23,27 @@ async function dataHandler() {
     const filtered = countryData.filter((record) => record.country_name.includes(search.value));
     console.log(filtered);
     filtered.forEach((item) => {
-      const appendItem = document.createElement('div');
-      appendItem.classList.add('container', 'left');
-      appendItem.innerHTML = `
+      if (filtered.indexOf(item) % 2 === 0) {
+        const appendItem = document.createElement('div');
+        appendItem.classList.add('container', 'right');
+        appendItem.innerHTML = `
         <div class="content">
             <h2>${item.war_name}</h2>
             <p>Duration: ${item.start_date} - ${item.end_date}</p>
             <p>(${item.duration} Days)</p>
         </div>`;
-      timeLine.append(appendItem);
-    // const topFive = filtered.slice(0, 5);
-    // topFive.forEach((item) => {
-    // const appendItem = document.createElement('');
-    // appendItem.classList.add('content');
-    // appendItem.classList.add('list-item');
-    // appendItem.innerHTML = `<h2>${item.country_name}</h2>`;
-    // rightList.append(appendItem);
+        timeLine.append(appendItem);
+      } else {
+        const appendItem = document.createElement('div');
+        appendItem.classList.add('container', 'left');
+        appendItem.innerHTML = `
+          <div class="content">
+              <h2>${item.war_name}</h2>
+              <p>Duration: ${item.start_date} - ${item.end_date}</p>
+              <p>(${item.duration} Days)</p>
+          </div>`;
+        timeLine.append(appendItem);
+      }
     });
   });
 }
