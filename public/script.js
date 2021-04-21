@@ -25,9 +25,9 @@ async function dataHandler() {
     filtered.forEach((item) => {
       if (filtered.indexOf(item) % 2 === 0) {
         const appendItem = document.createElement('div');
-        appendItem.classList.add('container', 'right');
+        appendItem.classList.add('containers', 'right');
         appendItem.innerHTML = `
-        <div class="content">
+        <div class="contents">
             <h2>${item.war_name}</h2>
             <p>Duration:            ${item.start_date} - ${item.end_date}</p>
             <p>Days of Conflict:    ${item.duration} Days</p>
@@ -36,9 +36,9 @@ async function dataHandler() {
         timeLine.append(appendItem);
       } else {
         const appendItem = document.createElement('div');
-        appendItem.classList.add('container', 'left');
+        appendItem.classList.add('containers', 'left');
         appendItem.innerHTML = `
-          <div class="content">
+          <div class="contents">
               <h2>${item.war_name}</h2>
               <p>Duration:            ${item.start_date} - ${item.end_date}</p>
               <p>Days of Conflict:    ${item.duration} Days</p>
