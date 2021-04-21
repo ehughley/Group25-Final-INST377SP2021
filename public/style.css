@@ -12,10 +12,12 @@ form {
     font-family: Helvetica, sans-serif;
   }
   
-  h1,h2, h3 {
+  h1,h2, h3, p {
     text-align:center;
     font-family: 'Black Ops One', cursive;
   }
+
+  
 
   /* The actual timeline (the vertical ruler) */
   .timeline {

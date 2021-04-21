@@ -795,7 +795,8 @@ router.put('/WhereFought', async (req, res) => {
 const warsCustom = `SELECT country_name,
  war_name, start_date, 
  end_date, 
- DATEDIFF(end_date,start_date) AS duration
+ DATEDIFF(end_date,start_date) AS duration,
+ battle_deaths
 FROM countries 
 JOIN participants
 	USING(country_id)

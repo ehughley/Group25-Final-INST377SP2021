@@ -29,8 +29,9 @@ async function dataHandler() {
         appendItem.innerHTML = `
         <div class="content">
             <h2>${item.war_name}</h2>
-            <p>Duration: ${item.start_date} - ${item.end_date}</p>
-            <p>(${item.duration} Days)</p>
+            <p>Duration:            ${item.start_date} - ${item.end_date}</p>
+            <p>Days of Conflict:    ${item.duration} Days</p>
+            <p>Number of Deaths:    ${item.battle_deaths}</p>
         </div>`;
         timeLine.append(appendItem);
       } else {
@@ -39,8 +40,9 @@ async function dataHandler() {
         appendItem.innerHTML = `
           <div class="content">
               <h2>${item.war_name}</h2>
-              <p>Duration: ${item.start_date} - ${item.end_date}</p>
-              <p>(${item.duration} Days)</p>
+              <p>Duration:            ${item.start_date} - ${item.end_date}</p>
+              <p>Days of Conflict:    ${item.duration} Days</p>
+              <p>Number of Deaths:    ${item.battle_deaths}</p>
           </div>`;
         timeLine.append(appendItem);
       }
