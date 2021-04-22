@@ -60,9 +60,10 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <form id="search-form" action="" class="block form">
-              <label for="search">Search</label>
-              <input type="text" id="search" name="search">
-              <button type="submit">Search</button>
+              <input type="text" id="search" name="search" 
+                onfocus="if(this.value==this.defaultValue)this.value=''"    
+                onblur="if(this.value=='')this.value=this.defaultValue" 
+                value="Search" maxlength="19" />
           </form>
           </div>
           </div>
@@ -75,7 +76,7 @@
     <div class="timeline">
       <div class="containers left">
         <div class="contents">
-          <h2>Timeline Starts Here!</h2>
+          <h3>Timeline Starts Here!</h3>
           <p>Search a country or filter the results to find out more!</p>
         </div>
       </div>
