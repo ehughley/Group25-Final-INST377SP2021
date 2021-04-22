@@ -52,7 +52,7 @@ form {
   .containers {
     padding: 10px 40px;
     position: relative;
-    background-color: inherit;
+    background-color: #b1a296;
     width: 50%;
   }
   
@@ -93,21 +93,29 @@ form {
     border-radius: 6px;
   }
   section {
-    background-color: #b1a296;
+    background-color: #b9a99c;
   }
   .navbar{
-    background-color: #b1aca8;
+    background-color: #b1a296;
   }
 
-  .container {
+  .container, .notification {
     background-color: #b1a296;
+    margin-bottom: 382px;
   }
 
   body {
     background-color: #b1a296;
   }
   .footer {
-    background-color: #b1a296;
+    background-color: #b9a99c;
+  }
+  hr {
+    background-color: black;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {
