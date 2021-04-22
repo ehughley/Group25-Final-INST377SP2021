@@ -82,29 +82,32 @@ form {
   
   /* Fix the circle for containers on the right side */
   .right::after {
-    left: -8px;
+    left: -9px;
   }
   
   /* The actual content */
   .contents {
     padding: 20px 30px;
-    background-color: rgb(194, 194, 194);
+    background-color: #b1aca8;
     position: relative;
     border-radius: 6px;
   }
   section {
-    background-color: rgb(161, 161, 161);
+    background-color: #b1a296;
   }
   .navbar{
-    background-color: rgb(194, 194, 194);
+    background-color: #b1aca8;
   }
 
   .container {
-    background-color: rgb(194, 194, 194)
+    background-color: #b1a296;
   }
 
   body {
-    background-color: rgb(161, 161, 161);
+    background-color: #b1a296;
+  }
+  .footer {
+    background-color: #b1a296;
   }
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {
