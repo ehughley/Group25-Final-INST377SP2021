@@ -76,7 +76,7 @@ form {
   .containers {
     padding: 10px 40px;
     position: relative;
-    background-color: inherit;
+    background-color: #b1a296;
     width: 50%;
   }
   
@@ -117,6 +117,12 @@ form {
     position: relative;
     border-radius: 6px;
     font-family: 'Open Sans', sans-serif;  
+  }
+  section {
+    background-color: #b9a99c;
+  }
+  .navbar{
+    background-color: #b1a296;
   }
 
   /*
