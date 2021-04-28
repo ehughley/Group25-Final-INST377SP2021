@@ -28,7 +28,7 @@ async function dataHandler() {
         appendItem.classList.add('containers', 'right');
         appendItem.innerHTML = `
         <div class="contents">
-            <h2>${item.war_name}</h2>
+            <h3>${item.war_name}</h3>
             <p>Duration:            ${item.start_date} - ${item.end_date}</p>
             <p>Days of Conflict:    ${item.duration} Days</p>
             <p>Number of Deaths:    ${item.battle_deaths}</p>
@@ -39,7 +39,7 @@ async function dataHandler() {
         appendItem.classList.add('containers', 'left');
         appendItem.innerHTML = `
           <div class="contents">
-              <h2>${item.war_name}</h2>
+              <h3>${item.war_name}</h3>
               <p>Duration:            ${item.start_date} - ${item.end_date}</p>
               <p>Days of Conflict:    ${item.duration} Days</p>
               <p>Number of Deaths:    ${item.battle_deaths}</p>
