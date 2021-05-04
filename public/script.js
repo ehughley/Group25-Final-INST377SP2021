@@ -25,7 +25,7 @@ async function dataHandler() {
     filtered.forEach((item) => {
       if (filtered.indexOf(item) % 2 === 0) {
         const appendItem = document.createElement('div');
-        appendItem.classList.add('containers', 'right');
+        appendItem.classList.add('containers', 'left');
         appendItem.innerHTML = `
         <div class="contents">
             <h3>${item.war_name}</h3>
@@ -36,7 +36,7 @@ async function dataHandler() {
         timeLine.append(appendItem);
       } else {
         const appendItem = document.createElement('div');
-        appendItem.classList.add('containers', 'left');
+        appendItem.classList.add('containers', 'right');
         appendItem.innerHTML = `
           <div class="contents">
               <h3>${item.war_name}</h3>
