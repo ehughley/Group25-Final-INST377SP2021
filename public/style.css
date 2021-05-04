@@ -40,12 +40,13 @@ form {
     background-color: #fbbf52;
   }
 
-  .navbar-dropdown {
-    background-color: #fbbf52;
+  .navbar-item {
+    color: #4a4a4a;
   }
 
   #menu-button:hover{
     background-color: #fcca6f;
+    color: rgb(31, 31, 31);
   }
 
   .search {
@@ -53,7 +54,7 @@ form {
     padding: 10px 5px;
     font-family: 'Black Ops One';
     font-size: 1em;
-    color: rgb(31, 31, 31);
+    color: #4a4a4a;
   }
 
   .notification {
