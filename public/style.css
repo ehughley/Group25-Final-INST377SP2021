@@ -156,9 +156,49 @@ form {
       padding-left: 70px;
       padding-right: 25px;
     }
+    * {
+      box-sizing: border-box;
+    }
+  
+  form {
+      float: right;
+      margin-right: 100px;
+  }
+    /* Set a background color */
+    body {
+      background-color: #fae9ce;
+    }
+    
+    h1,h2 {
+      text-align:center;
+    }
+  
+    h2 {
+      padding-top: 15px;
+    }
+  
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+  
+    p {
+      font-family: 'Open Sans', sans-serif;
+    }
+  
+    .section {
+      background-color: #fbbf52;
+      font-family: 'Black Ops One', cursive;
+      height: 240px;
+      border-bottom: 2px solid #c7ad5c;
+      margin-bottom: 20px;
 
+    }
+  
     .navbar-menu {
       background-color: #fbbf52;
+      height: 250px;
     }
   
     .navbar-item {
@@ -178,14 +218,91 @@ form {
       color: #4a4a4a;
     }
   
-  
-    .left::after, .right::after {
-      left: 15px;
-      color: black;
+    .notification {
+      background-color: #fae9ce;
     }
   
-
-   .right {
-      left: 0%;
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: black;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3.5px;
+    }
+    
+    /* Container around content */
+    .containers {
+      padding: 10px 10px;
+      position: relative;
+      width: 50%;
+    }
+    
+    /* The circles on the timeline */
+    .containers::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: -5px;
+      background-color: black;
+      top: 0px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  
+  /*
+  .left {
+      left: 0;
+    }
+    */
+    
+    /* Place the container to the right */
+    .right {
+      left: 50%;
+    }
+    
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -10px;
+    }
+    
+    /* The actual content */
+    .contents {
+      padding: 20px 30px;
+      background-color: #5aa8a8;
+      position: relative;
+      border-radius: 6px;
+      text-align: center;
+      color: #4a4a4a;
+    }
+  
+    .footer {
+      background-color: #f8dcaf;
+      border-top: 2px solid #c7ad5c;
+      border-bottom: 2px solid #c7ad5c;
+      padding-bottom: 25px;
+      text-align: center;
+    }
+  
+    .description {
+      background-color: #fae9ce;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .navbar {
+      background-color: #fcca6f;
     }
   }
