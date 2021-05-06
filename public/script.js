@@ -20,7 +20,7 @@ async function dataHandler() {
   form.addEventListener('submit', async(event) => {
     event.preventDefault();
     console.log(search.value);
-    const filtered = countryData.filter((record) => record.country_name.includes(search.value));
+    const filtered = countryData.filter((record) => record.country_name.toLowerCase().includes(search.value.toLowerCase()));
     console.log(filtered);
     filtered.forEach((item) => {
       if (filtered.indexOf(item) % 2 === 0) {
