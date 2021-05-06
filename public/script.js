@@ -18,6 +18,7 @@ async function dataHandler() {
   console.table(countryData);
 
   form.addEventListener('submit', async(event) => {
+    // document.getElementById('clear').innerHTML = '';
     event.preventDefault();
     console.log(search.value);
     const filtered = countryData.filter((record) => record.country_name.toLowerCase().includes(search.value.toLowerCase()));
@@ -27,7 +28,7 @@ async function dataHandler() {
         const appendItem = document.createElement('div');
         appendItem.classList.add('containers', 'left');
         appendItem.innerHTML = `
-        <div class="contents">
+        <div class="contents" id="clear">
             <h3>${item.war_name}</h3>
             <p>Duration:            ${item.start_date} - ${item.end_date}</p>
             <p>Days of Conflict:    ${item.duration} Days</p>
@@ -38,7 +39,7 @@ async function dataHandler() {
         const appendItem = document.createElement('div');
         appendItem.classList.add('containers', 'right');
         appendItem.innerHTML = `
-          <div class="contents">
+          <div class="contents" id="clear">
               <h3>${item.war_name}</h3>
               <p>Duration:            ${item.start_date} - ${item.end_date}</p>
               <p>Days of Conflict:    ${item.duration} Days</p>
