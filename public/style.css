@@ -157,6 +157,27 @@ form {
       padding-right: 25px;
     }
 
+    .navbar-menu {
+      background-color: #fbbf52;
+    }
+  
+    .navbar-item {
+      color: #4a4a4a;
+    }
+  
+    #menu-button:hover{
+      background-color: #fcca6f;
+      color: rgb(31, 31, 31);
+    }
+  
+    .search {
+      background-color: #fbbf52;
+      padding: 10px 5px;
+      font-family: 'Black Ops One';
+      font-size: 1em;
+      color: #4a4a4a;
+    }
+  
   
     .left::after, .right::after {
       left: 15px;
