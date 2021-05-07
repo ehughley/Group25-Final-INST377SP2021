@@ -45,35 +45,31 @@
         <div class="container">
           <div class="notification">
             <form id="warPost"action="/api" method="post"> 
-              <ul>
+              <ul class="flex-outer">
                 <li>
-                  <label for="first-name">First Name</label>
-                  <input type="text" id="first-name" placeholder="Enter your first name here">
+                  <label for="title">Title</label>
+                  <input type="text" id="title" placeholder="Enter the title here">
                 </li>
                 <li>
-                  <label for="last-name">Last Name</label>
-                  <input type="text" id="last-name" placeholder="Enter your last name here">
-                </li>
-                <li>
-                  <label for="email">Email</label>
-                  <input type="email" id="email" placeholder="Enter your email here">
-                </li>
-                <li>
-                  <label for="phone">Phone</label>
-                  <input type="tel" id="phone" placeholder="Enter your phone here">
+                  <label for="location">Location</label>
+                  <input type="text" id="location" placeholder="Enter location here">
                 </li>
                 <li>
                   <p>Please pick a data manipulation method</p>
                   <ul class="flex-inner">
                       <li>
-                        <input type="checkbox" id="twenty-to-twentynine">
-                        <label for="twenty-to-twentynine">add an entry</label>
+                        <input type="checkbox" id="add">
+                        <label for="add">add an entry</label>
                       </li>
                       <li>
-                        <input type="checkbox" id="thirty-to-thirtynine">
-                        <label for="thirty-to-thirtynine">edit an entry</label>
+                        <input type="checkbox" id="edit">
+                        <label for="edit">edit an entry</label>
                       </li>
                       <li>
+                          <input type="checkbox" id="delete">
+                          <label for="delete">delete an entry</label>
+                        </li>
+                        <li>
                           <input type="checkbox" id="thirty-to-thirtynine">
                           <label for="thirty-to-thirtynine">delete an entry</label>
                         </li>
@@ -88,24 +84,17 @@
                   <button type="submit">Submit</button>
                 </li>
               </ul>
+            </form>
             </form> 
           </div>
         </div>
         <footer class="footer">
             <div class="content has-text-centered">
               <p>
-<<<<<<< HEAD
-                <strong>War Facts</strong> by <a>Bradley Dayhoff</a>, <a>Zirwah Ahmed</a>, <a>Swati Patel</a>, <a>Liz Hughley</a>, and <a>Brendan Goodhue</a>.
-                INST377 Final Group Project. 
-              </p>
-              <p>
-                This project is associated with <a>The University of Maryland's School of Information Studies</a>.
-=======
                 War Facts by INST377 Spring 21 Final Group Project Team 25: Zirwah Ahmad, 
                 Bradley Dayhoff, Brendan Goodhue, Liz Hughley, and  Swati Patel. 
                 <br/> <br/>
                 This project is associated with <a href="https://ischool.umd.edu" target="_blank" rel="noopener noreferrer">The University of Maryland's School of Information Studies</a>.
->>>>>>> c80136ee0744e0e0e952468622176b9087d63041
               </p>
             </div>
         </footer>
