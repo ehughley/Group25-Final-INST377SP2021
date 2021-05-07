@@ -42,6 +42,38 @@
             </div>
         </section>
         <div class="description"></div>
+<<<<<<< HEAD
+        <div class="container">
+          <div class="notification">
+            <form action="/api" method="post"> 
+              <ul>
+                <li>
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" placeholder="Enter your first name here">
+                </li>
+                <li>
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" placeholder="Enter your last name here">
+                </li>
+                <li>
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Enter your email here">
+                </li>
+                <li>
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" placeholder="Enter your phone here">
+                </li>
+                <li>
+                  <p>Please pick a data manipulation method</p>
+                  <ul class="flex-inner">
+                      <li>
+                        <input type="checkbox" id="twenty-to-twentynine">
+                        <label for="twenty-to-twentynine">add an entry</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id="thirty-to-thirtynine">
+                        <label for="thirty-to-thirtynine">edit an entry</label>
+=======
 <!--          <form action="/api" method="post"> -->
             <ul class="flex-outer">
               <li>
@@ -67,19 +99,25 @@
                     <li>
                         <input type="checkbox" id="delete">
                         <label for="delete">delete an entry</label>
+>>>>>>> cbef218e2bc665c7253d9c95b422a0c057bf0cc7
                       </li>
-                  </ul>
-              </li>
-              <li>
-                <label for="message">Description</label>
-                <textarea rows="6" id="message" placeholder="Enter your message here"></textarea>
-              </li>
+                      <li>
+                          <input type="checkbox" id="thirty-to-thirtynine">
+                          <label for="thirty-to-thirtynine">delete an entry</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                  <label for="message">Description</label>
+                  <textarea rows="6" id="message" placeholder="Enter your message here"></textarea>
+                </li>
              
-              <li>
-                <button type="submit">Submit</button>
-              </li>
-            </ul>
-<!--          </form> -->
+                <li>
+                  <button type="submit">Submit</button>
+                </li>
+              </ul>
+            </form> 
+          </div>
         </div>
         <footer class="footer">
             <div class="content has-text-centered">
@@ -90,7 +128,7 @@
                 This project is associated with <a href="https://ischool.umd.edu" target="_blank" rel="noopener noreferrer">The University of Maryland's School of Information Studies</a>.
               </p>
             </div>
-          </footer>
+        </footer>
     <script src="script.js"></script>
     </body>
 </html>
