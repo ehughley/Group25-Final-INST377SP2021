@@ -18,7 +18,9 @@ async function dataHandler() {
   console.table(countryData);
 
   form.addEventListener('submit', async(event) => {
-    // document.getElementById('clear').innerHTML = '';
+    while (search.value === 0) {
+      document.getElementById('clear').innerHTML = '';
+    }
     event.preventDefault();
     console.log(search.value);
     const filtered = countryData.filter((record) => record.country_name.toLowerCase().includes(search.value.toLowerCase()));
