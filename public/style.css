@@ -2,10 +2,6 @@
     box-sizing: border-box;
   }
 
-form {
-    float: right;
-    margin-right: 100px;
-}
   /* Set a background color */
   body {
     background-color: #fae9ce;
@@ -143,6 +139,7 @@ form {
     padding-right: 100px;
   }
 
+
  
   @media screen and (max-width: 1023px) {
 
@@ -160,10 +157,7 @@ form {
       box-sizing: border-box;
     }
   
-  form {
-      float: right;
-      margin-right: 100px;
-  }
+
     /* Set a background color */
     body {
       background-color: #fae9ce;
