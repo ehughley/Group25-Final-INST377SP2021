@@ -2,6 +2,8 @@
 async function getData() {
   const request = await fetch('/api/war/custom');
   const data = await request.json();
+  const formRequest = await fetch('/api/wars');
+  const formData = await request.json();
   return data;
 }
 
@@ -73,6 +75,25 @@ async function dataHandler() {
   });
 }
 
+async function formData() {
+  const formRequest = await fetch('/api/wars');
+  const formData = await request.json();
+  return formData;
+}
+
+async function dataEntry() {
+  ('form#warPost').submit((e) => {
+    e.preventDefault();
+
+    const form = $(this);
+    const jsonvideoFormData = utils.serializeToJSON(form);
+    const xhrData = _.pick(jsonvideoFormData, 'video_url', 'artist_id', 'type');
+
+    api.post('/api/wars', xhrData, (response) => {
+      alert('Video has been added!');
+    });
+  });
+}
 async function windowsAction() {
   dataHandler();
   console.log('Window Loaded');
