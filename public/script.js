@@ -1,9 +1,39 @@
 /* eslint-disable max-len */
+function timelineBuilder(conflicts) {
+  const timeLine = document.querySelector('.timeline');
+  conflicts.forEach((item) => {
+    if (conflicts.indexOf(item) % 2 === 0) {
+      const appendItem = document.createElement('div');
+      appendItem.classList.add('containers', 'left');
+      appendItem.innerHTML = `
+      <div class="contents" id="clear">
+          <h3>${item.war_name}</h3>
+          <p>Duration:            ${item.start_date} - ${item.end_date}</p>
+          <p>Days of Conflict:    ${item.duration} Days</p>
+          <p>Number of Deaths:    ${item.battle_deaths}</p>
+      </div>`;
+      timeLine.append(appendItem);
+    } else {
+      const appendItem = document.createElement('div');
+      appendItem.classList.add('containers', 'right');
+      appendItem.innerHTML = `
+        <div class="contents" id="clear">
+            <h3>${item.war_name}</h3>
+            <p>Duration:            ${item.start_date} - ${item.end_date}</p>
+            <p>Days of Conflict:    ${item.duration} Days</p>
+            <p>Number of Deaths:    ${item.battle_deaths}</p>
+        </div>`;
+      timeLine.append(appendItem);
+    }
+  });
+}
 async function getData() {
   const request = await fetch('/api/war/custom');
   const data = await request.json();
-  const formRequest = await fetch('/api/wars');
-  const formData = await request.json();
+  // const formRequest = await fetch('/api/wars');
+  // const formData = await formRequest.json();
+  // console.log("dataEndpoint", data.length);
+  // console.table(data);
   return data;
 }
 
@@ -17,41 +47,22 @@ async function dataHandler() {
 
   // const request = await fetch('/api/Countries');
   const countryData = await getData();
+  console.log('countryData', countryData.length);
   console.table(countryData);
-
+  timelineBuilder(countryData);
   form.addEventListener('submit', async(event) => {
-    while (search.value === 0) {
-      document.getElementById('clear').innerHTML = '';
-    }
+    //   while (search.value === 0) {
+    //      document.getElementById('clear').innerHTML = '';
+    //    }
     event.preventDefault();
+    const searchBar = document.querySelector('#search');
+    searchBar.innerHTML = '';
+
+    timeLine.innerHTML = '';
     console.log(search.value);
     const filtered = countryData.filter((record) => record.country_name.toLowerCase().includes(search.value.toLowerCase()));
     console.log(filtered);
-    filtered.forEach((item) => {
-      if (filtered.indexOf(item) % 2 === 0) {
-        const appendItem = document.createElement('div');
-        appendItem.classList.add('containers', 'left');
-        appendItem.innerHTML = `
-        <div class="contents" id="clear">
-            <h3>${item.war_name}</h3>
-            <p>Duration:            ${item.start_date} - ${item.end_date}</p>
-            <p>Days of Conflict:    ${item.duration} Days</p>
-            <p>Number of Deaths:    ${item.battle_deaths}</p>
-        </div>`;
-        timeLine.append(appendItem);
-      } else {
-        const appendItem = document.createElement('div');
-        appendItem.classList.add('containers', 'right');
-        appendItem.innerHTML = `
-          <div class="contents" id="clear">
-              <h3>${item.war_name}</h3>
-              <p>Duration:            ${item.start_date} - ${item.end_date}</p>
-              <p>Days of Conflict:    ${item.duration} Days</p>
-              <p>Number of Deaths:    ${item.battle_deaths}</p>
-          </div>`;
-        timeLine.append(appendItem);
-      }
-    });
+    timelineBuilder(filtered);
   });
   document.addEventListener('click', () => {
     // Get all "navbar-burger" elements
